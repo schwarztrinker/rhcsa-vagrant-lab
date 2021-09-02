@@ -1,14 +1,14 @@
 #!/bin/bash
 
-# package installations
+#### package installations ####
 dnf update
-dnf install vim openssl policycoreutils policycoreutils-python-utils setools setools-console setroubleshoot -y
+dnf install vim openssl policycoreutils policycoreutils-python-utils setools setools-console setroubleshoot epel-release -y
 
-# enable sshd permission
+#### enable sshd permission ####
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd.service
 
-# add student user with sudo privileges
+#### add student user with sudo privileges ####
 useradd student
 echo 'student:student' | chpasswd -
 usermod -aG wheel student
