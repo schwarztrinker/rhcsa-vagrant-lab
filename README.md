@@ -11,12 +11,11 @@ vagrant up
 ```
 vagrant ssh workstation
 ```
-Here you can change to user student
+Here you can switch to user student. 
 
 ```
-su - student
+su - student   [PASSWORD = student]
 ```
-The password is "student"
 
 ## SSH directly into workstation as user student
 
