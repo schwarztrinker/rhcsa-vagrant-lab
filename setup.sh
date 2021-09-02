@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # package installations
-dnf install vim openssl -y
+dnf update
+dnf install vim openssl policycoreutils policycoreutils-python-utils setools setools-console setroubleshoot -y
 
 # enable sshd permission
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
