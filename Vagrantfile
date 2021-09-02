@@ -1,7 +1,8 @@
 Vagrant.configure("2") do |config|
   
     config.vm.define "workstation" do |workstation|
-        workstation.vm.box ="centos/8"
+        workstation.vm.box = "kbsmanikanta/centos8-gui"
+        workstation.vm.box_version = "1.0"
         workstation.vm.hostname = "workstation"
         workstation.vm.network :private_network, ip: "10.0.0.10"
 
