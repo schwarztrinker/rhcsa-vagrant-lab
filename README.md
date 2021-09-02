@@ -20,7 +20,9 @@ su - student   [PASSWORD = student]
 ## SSH directly into workstation as user student
 
 ``` 
-ssh -p 2222 student@localhost 
+vagrant port workstation
+
+ssh -p hostport student@localhost 
 ``` 
 
 your Port may differ
