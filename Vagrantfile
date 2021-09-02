@@ -15,10 +15,10 @@ Vagrant.configure("2") do |config|
         servera.vm.hostname = "servera"
         servera.vm.network :private_network, ip: "10.0.0.11"
         
-        # disks in vagrant experimental not working yet 
-        (0..3).each do |i|
-            servera.vm.disk :disk, size: "5GB", name: "disk-#{i}"
-        end
+        ### disk provisioning in vagrant is in an experimental state - not working yet 
+        # (0..3).each do |i|
+        #    servera.vm.disk :disk, size: "5GB", name: "disk-#{i}"
+        # end
 
        # host config serverb
         servera.vm.provision "shell", inline: "echo '10.0.0.10 workstation' >> /etc/hosts"
