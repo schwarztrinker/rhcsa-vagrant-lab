@@ -1,6 +1,11 @@
 # Lab environment for EX200 (RHCSA) built with VirtualBox and Vagrant
 For the RH124 and 134 courses i needed a local lab environment for preperation. In this repo you can use and see my outcome.
 
+## Prerequisites
+You installed: 
+- Vagrant
+- VirtualBox or HyperV or KVM
+
 ## Setting up the environment
 ``` 
 vagrant up
@@ -11,7 +16,7 @@ vagrant up
 ```
 vagrant ssh workstation
 ```
-Here you can switch to user student. 
+Here you can switch to theuser student. 
 
 ```
 su - student   [PASSWORD = student]
@@ -26,3 +31,9 @@ ssh -p hostport student@localhost
 ``` 
 
 your Port may differ
+
+## Enable disk provisioning at windows
+
+```
+$env:VAGRANT_EXPERIMENTAL="disks"
+```
