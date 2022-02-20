@@ -1,7 +1,8 @@
 Vagrant.configure("2") do |config|
   
     config.vm.define "workstation" do |workstation|
-        workstation.vm.box = "centos/stream8"
+        workstation.vm.box = "rockylinux/8"
+        workstation.vm.box_version = "4.0.0"
         workstation.vm.hostname = "workstation"
         workstation.vm.network :private_network, ip: "10.0.0.10"
 
@@ -12,11 +13,16 @@ Vagrant.configure("2") do |config|
         # disable 3d acceleration cause of screen flickering
         config.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--accelerate3d", "off"]
-          end
+        end
+        
+        #config.vm.provision "shell", inline: "dnf groupinstall 'Server with GUI' -y"
+        #config.vm.provision "shell", inline: "systemctl set-default graphical"
+
     end
   
     config.vm.define "servera" do |servera|
-        servera.vm.box ="centos/stream8"
+        servera.vm.box = "rockylinux/8"
+        servera.vm.box_version = "4.0.0"
         servera.vm.provider :virtualbox
         servera.vm.hostname = "servera"
         servera.vm.network :private_network, ip: "10.0.0.11"

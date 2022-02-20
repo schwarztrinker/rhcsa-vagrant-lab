@@ -36,4 +36,6 @@ your Port may differ
 
 ```
 $env:VAGRANT_EXPERIMENTAL="disks"
+
+vagrant reload
 ```
